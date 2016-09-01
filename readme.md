@@ -47,7 +47,7 @@ Weekly Homework
 | 1        | `bottlesOfBeer.js`, `randAddressGenerator.js` | Conditionals & Loops | Monday, August 22nd |
 | 2        | [Instructions](https://gist.github.com/Borgaard/2e53738c56891f1572209e360f71c969) for `hubot`. | In-class lab | Monday, August 29th |
 | 3        | Complete exercises in `json-hw.js` file. | JSON & Objects | Wednesday, August 31st |
-| 4        | Madlibs! | DOM & jQuery | Wednesday, September 7th |
+| 4        | Madlibs! + `bottlesOfBeerDOM.js`! | DOM & jQuery | Wednesday, September 7th |
 | ...      |            | - | - |
 
 
