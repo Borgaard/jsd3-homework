@@ -10,3 +10,12 @@
 .crossed-off {
   text-decoration: line-through;
 }
+
+.mousing-over {
+  color: grey;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
+}

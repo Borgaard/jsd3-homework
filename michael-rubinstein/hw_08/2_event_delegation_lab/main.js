@@ -25,13 +25,6 @@ function addToList($list, thing) {
 function addCrossOffLink($li) {
   var $crossOffLink = $('<span>').html(' cross off').addClass('cross-off');
   $li.append($crossOffLink);
-  // EVENT DELEGATION REFACTOR
-  // REMOVED BY MNR
-  // $crossOffLink.on('click', function(event) {
-  //   $li.addClass('crossed-off');
-  //   $crossOffLink.html('');
-  // });
-  // END OF REMOVED BLOCK
 }
 
 $(document).ready(function() {
@@ -44,14 +37,22 @@ $(document).ready(function() {
     addCrossOffLink($(li));
   });
 
-  // EVENT DELEGATION REFACTOR
-  // ADDED BY MNR
-  $thingList.on('click', 'li', function(event) {
-    $(this).addClass('crossed-off');
-    $(this).children().html('');
-    console.log("List item clicked on");
+  $thingList.on('mouseenter mouseleave', 'li', function(event) {
+    switch (event.type) {
+      case 'mouseenter':
+        $(this).addClass('mousing-over');
+        $(this).siblings().removeClass('mousing-over');
+        break;
+      case 'mouseleave':
+        $(this).removeClass('mousing-over');
+        break;
+    }
   });
-  // END OF ADDED BLOCK
+
+  $thingList.on('click', '.cross-off', function(event) {
+    $(this).parent().addClass('crossed-off');
+    $(this).html('');
+  });
 
   $button.on('click', function(event) {
     event.preventDefault();
