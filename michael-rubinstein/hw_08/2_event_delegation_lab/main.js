@@ -18,13 +18,13 @@ Bonus 2: Add another link, after each item, that allows you to delete the item.
 
 function addToList($list, thing) {
   var $thingLi = $('<li>').html(thing).addClass('fav-thing');
-  addCrossOffLink($thingLi);
+  addCrossOffAndDeleteLinks($thingLi);
   $list.append($thingLi);
 }
 
-function addCrossOffLink($li) {
-  var $crossOffLink = $('<span>').html(' cross off').addClass('cross-off');
-  $li.append($crossOffLink);
+function addCrossOffAndDeleteLinks($li) {
+  $li.append($('<span>').html(' cross off').addClass('cross-off'));
+  $li.append($('<span>').html(' delete').addClass('delete'));
 }
 
 $(document).ready(function() {
@@ -34,7 +34,7 @@ $(document).ready(function() {
   var $newThingInput = $('#new-thing');
 
   $things.toArray().forEach(function(li) {
-    addCrossOffLink($(li));
+    addCrossOffAndDeleteLinks($(li));
   });
 
   $thingList.on('mouseenter mouseleave', 'li', function(event) {
@@ -52,6 +52,10 @@ $(document).ready(function() {
   $thingList.on('click', '.cross-off', function(event) {
     $(this).parent().addClass('crossed-off');
     $(this).html('');
+  });
+
+  $thingList.on('click', '.delete', function(event) {
+    $(this).parent().remove();
   });
 
   $button.on('click', function(event) {
