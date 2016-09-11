@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SF Weather</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <script type="text/x-handlebars-template" id="weatherTemplate">
+            <div class="weatherTemplateWrapper">
+                <div><span>High: </span><span>{{high}}&deg;F</span></div>
+                <div><span>Low: </span><span>{{low}}&deg;F</span></div>
+                <div><span>Chance of Rain: </span><span>{{precip}}%</span></div>
+                <div><span>UV level: </span></span>{{uv}}</span></div>
+            </div>
+        </script>
+
+
+
+        <h1>San Francisco Weather Forecast</h1>
+
+
+<!--
+        <div id="city">
+            <div><span>High: </span><span>65&deg;F</span></div>
+            <div><span>Low: </span><span>48&deg;F</span></div>
+            <div><span>Chance of Rain: </span><span>20%</span></div>
+            <div><span>UV level: </span><span>moderate</span></div>
+        </div>
+-->
+        <script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+        <!-- added handlebars ABOVE rest of our JS file -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>

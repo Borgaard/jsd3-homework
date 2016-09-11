@@ -1,0 +1,23 @@
+.complete-task {
+  color: blue;
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+#todo-list {
+  cursor: pointer;
+}
+
+.complete-task {
+  color: blue;
+}
+
+.inactive {
+	color: #ccc;
+}
+
+.completed {
+  text-decoration: line-through;
+}
