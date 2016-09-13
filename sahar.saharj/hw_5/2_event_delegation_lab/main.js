@@ -34,6 +34,15 @@ function addCrossOffLink($list) {
   $crossOffLink.on('click', crossOff);
 }
 
+function addDeleteLink($list) {
+  var $deleteLink = $('<span>').html(' delete');
+  $list.append($deleteLink);
+  $deleteLink.on('click', function(event) {
+    event.preventDefault();
+    $(this).parent().html('');
+  });
+}
+
 function addGreyColor(event) {
   $(this).css('color', 'grey');
 };
@@ -50,6 +59,7 @@ $(document).ready(function() {
 
   $things.each(function(index, li) {
     addCrossOffLink($(li));
+    addDeleteLink($(li));
   });
 
   $things.hover(addGreyColor, removeGreyColor);
