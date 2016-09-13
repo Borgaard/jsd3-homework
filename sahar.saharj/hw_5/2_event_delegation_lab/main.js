@@ -34,6 +34,13 @@ function addCrossOffLink($list) {
   $crossOffLink.on('click', crossOff);
 }
 
+function addGreyColor(event) {
+  $(this).css('color', 'grey');
+};
+
+function removeGreyColor(event) {
+  $(this).css('color', 'black');
+};
 
 $(document).ready(function() {
   var $thingList = $('#fav-list');
@@ -44,6 +51,8 @@ $(document).ready(function() {
   $things.each(function(index, li) {
     addCrossOffLink($(li));
   });
+
+  $things.hover(addGreyColor, removeGreyColor);
 
   $button.on('click', function(event) {
     event.preventDefault();
