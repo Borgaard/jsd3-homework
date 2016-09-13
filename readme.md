@@ -49,6 +49,7 @@ Weekly Homework
 | 3        | Complete exercises in `json-hw.js` file. | JSON & Objects | Wednesday, August 31st |
 | 4        | Madlibs! + `bottlesOfBeerDOM.js`! | DOM & jQuery | Wednesday, September 7th |
 | 5        | These are some of my `favoriteThings.js` | Dom & jQuery (cont.) | Monday, September 12th |
-| ...      |            | - | - |
+| 6        | Open Weather API | Ajax & APIs | Wednesday, September 14th |
+| ...      | - | - | - |
 
 
