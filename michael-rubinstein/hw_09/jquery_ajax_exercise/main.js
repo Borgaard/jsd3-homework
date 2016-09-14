@@ -23,7 +23,7 @@ var WEATHER_NY = WEATHERSTR01 + ID_NY + WEATHERSTR02 + API_KEY + WEATHERSTR03;
 function getWeatherData(dSource) {
     $.get(dSource, function(response) {
         console.log(response);
-        var tempString = `The current temperature in the city of ${response.name} is ${response.main.temp}&deg; Farenheit.`;
+        var tempString = `The current temperature in the city of ${response.name} is ${response.main.temp}&deg; Fahrenheit.`;
         console.log(tempString);
         $("#tempString").html(tempString);
     });
