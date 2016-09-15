@@ -50,7 +50,7 @@ Weekly Homework
 | 4        | Madlibs! + `bottlesOfBeerDOM.js`! | DOM & jQuery | Wednesday, September 7th |
 | 5        | These are some of my `favoriteThings.js` | Dom & jQuery (cont.) | Monday, September 12th |
 | 6        | Open Weather API | Ajax & APIs | Wednesday, September 14th |
-| 7        | Log city & zip data to the console using `zippotam` in the homework folder. | Callbacks & Asynchronous JS | Monday, September 19th |
+| 7        | Log city & zip data to the console using `zippotam` in the homework folder. Get an API key for Google Maps [here](https://developers.google.com/maps/documentation/javascript/get-api-key). | Callbacks & Asynchronous JS | Monday, September 19th |
 | 8      | - | - | - |
 | 9      | - | - | - |
 | ...      | - | - | - |
