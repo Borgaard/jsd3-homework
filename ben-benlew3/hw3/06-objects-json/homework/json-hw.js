@@ -18,11 +18,11 @@ with the date the photo was taken. The first console.log should return the follo
 
 */
 
-// for (var title in flickerObj.items){
-//   if (flickerObj.items.hasOwnProperty(title)){
-//     console.log(flickerObj.items[""]);
-//   }
-// }
+for (var title in flickerObj.items){
+  if (flickerObj.items.hasOwnProperty(title)){
+    console.log(flickerObj.items[0].title + flickerObj.items[0].date_taken);
+  }
+}
 
 /*
 3. Create a new array called 'links'. Iterate through the items array in flickerObj and store the the links to each item in the 'links' array.
