@@ -20,15 +20,24 @@ var API_KEY = "6615f08a3cb745396a7b6a4cf8531bc9";
 var WEATHER_SF = WEATHERSTR01 + ID_SF + WEATHERSTR02 + API_KEY + WEATHERSTR03;
 var WEATHER_NY = WEATHERSTR01 + ID_NY + WEATHERSTR02 + API_KEY + WEATHERSTR03;
 
-var FIO_SF = "https://api.forecast.io/forecast/40b581943e736a8ddb1b6d0beda5a155/37.774929,-122.419416"
-var FIO_NY = "https://api.forecast.io/forecast/40b581943e736a8ddb1b6d0beda5a155/40.712784,-74.005941"
+var FIO_SF = "https://accesscontrolalloworiginall.herokuapp.com/https://api.forecast.io/forecast/40b581943e736a8ddb1b6d0beda5a155/37.774929,-122.419416"
+var FIO_NY = "https://accesscontrolalloworiginall.herokuapp.com/https://api.forecast.io/forecast/40b581943e736a8ddb1b6d0beda5a155/40.712784,-74.005941"
 
-function getWeatherData(dSource, sourceName) {
+function getOWMWeatherData(dSource) {
     $.get(dSource, function(response) {
         console.log(response);
-        var tempString = `${sourceName} says the current temperature in the city of ${response.name} is ${response.main.temp}&deg; Fahrenheit.`;
+        var tempString = `Open Weather Map says the current temperature in the city of ${response.name} is ${response.main.temp}&deg; Fahrenheit.`;
         console.log(tempString);
-        $('#' + sourceName).html(tempString);
+        $("#OpenWeatherMap").html(tempString);
+    });
+}
+
+function getFIOWeatherData(dSource, cityName) {
+    $.get(dSource, function(response) {
+        console.log(response);
+        var tempString = `Forecast.io says the current temperature in the city of ${cityName} is ${response.currently.temperature}&deg; Fahrenheit.`;
+        console.log(tempString);
+        $("#ForecastIO").html(tempString);
     });
 }
 
@@ -38,13 +47,13 @@ $(document).ready (function() {
 
   $button1.on("click", function(event) {
     event.preventDefault();
-    getWeatherData(WEATHER_SF, "OpenWeatherMap");
-    getWeatherData(FIO_SF, "ForecastIO");
+    getOWMWeatherData(WEATHER_SF);
+    getFIOWeatherData(FIO_SF, "San Francisco");
   });
 
   $button2.on("click", function(event) {
     event.preventDefault();
-    getWeatherData(WEATHER_NY, "OpenWeatherMap");
-    getWeatherData(FIO_NY, "ForecastIO");
+    getOWMWeatherData(WEATHER_NY);
+    getFIOWeatherData(FIO_NY, "New York");
   });
 });
