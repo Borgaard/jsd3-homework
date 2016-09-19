@@ -10,3 +10,20 @@
 
 "use strict";
 
+$(document).ready (function() {
+  $("#zip").on("focus", function(event) {
+    $("#zip").val('');
+  });
+
+  $("#lookup").on("click", function(event) {
+    event.preventDefault();
+    var query = "http://api.zippopotam.us/us/" + $("#zip").val();
+    $.get(query, function(response) {
+      var cityName = response.places["0"]["place name"];
+      var stateName = response.places["0"]["state abbreviation"];
+      $("#city").val(cityName);
+      $("#state").val(stateName);
+      console.log(`City: ${cityName}\nState: ${stateName}`);
+    });
+  });
+});
