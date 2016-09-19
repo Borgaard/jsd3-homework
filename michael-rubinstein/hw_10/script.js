@@ -10,20 +10,33 @@
 
 "use strict";
 
-$(document).ready (function() {
-  $("#zip").on("focus", function(event) {
-    $("#zip").val('');
-  });
+(function($, window, document) {
+  $(document).ready (function() {
+    var $zipCodeBox = $("#zip");
+    var $lookupButton = $("#lookup");
 
-  $("#lookup").on("click", function(event) {
-    event.preventDefault();
-    var query = "http://api.zippopotam.us/us/" + $("#zip").val();
-    $.get(query, function(response) {
-      var cityName = response.places["0"]["place name"];
-      var stateName = response.places["0"]["state abbreviation"];
-      $("#city").val(cityName);
-      $("#state").val(stateName);
-      console.log(`City: ${cityName}\nState: ${stateName}`);
+    $zipCodeBox.on('focus keyup', function(event) {
+      switch (event.type) {
+        case 'focus':
+          $zipCodeBox.val('');
+          break;
+        case 'keyup':
+          if ($zipCodeBox.val().length >= 5) {
+            $lookupButton.triggerHandler('click');
+          };
+      };
+    });
+
+    $lookupButton.on('click', function(event) {
+      event.preventDefault();
+      var query = "http://api.zippopotam.us/us/" + $zipCodeBox.val();
+      $.get(query, function(response) {
+        var cityName = response.places["0"]["place name"];
+        var stateName = response.places["0"]["state abbreviation"];
+        $("#city").val(cityName);
+        $("#state").val(stateName);
+        console.log(`City: ${cityName}\nState: ${stateName}`);
+      });
     });
   });
-});
+})(window.jQuery, window, document);
