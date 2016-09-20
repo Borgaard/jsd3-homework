@@ -15,13 +15,13 @@
 
 (function() {
 
-	$('#zip').on('keyup', function() {
+	($('#zip').on('keyup', function() {
 		var zipCode = $('#zip').val();
 		var url = 'http://api.zippopotam.us/us/' + zipCode;
 
 		console.log('url: ' + url);
 		process(url, cityAndState);
-	});
+	}))();
 
 	function process(url, callback) {
 		$.ajax({
