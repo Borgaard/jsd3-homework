@@ -51,8 +51,8 @@ Weekly Homework
 | 5        | These are some of my `favoriteThings.js` | Dom & jQuery (cont.) | Monday, September 12th |
 | 6        | Open Weather API | Ajax & APIs | Wednesday, September 14th |
 | 7        | Log city & zip data to the console using `zippotam` in the homework folder. Get an API key for Google Maps [here](https://developers.google.com/maps/documentation/javascript/get-api-key). | Callbacks & Asynchronous JS | Monday, September 19th |
-| 8      | - | - | - |
-| 9      | - | - | - |
+| 8        | Use `500px` to find user location and display landscape photos nearby. | Advanced APIs | Wednesday, September 21st |
+| 9        | - | - | - |
 | ...      | - | - | - |
 
 
