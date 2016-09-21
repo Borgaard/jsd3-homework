@@ -19,7 +19,9 @@ $(function() {
         var radius = '10mi';
         var searchOptions = {
           geo: lat + ',' + long + ',' + radius,
-          only: 'Landscapes'
+          only: 'Landscapes',
+          sort: 'rating',
+          rpp: 28
         };
 
         _500px.api('/photos/search', searchOptions, function(response) {
@@ -42,7 +44,7 @@ $(function() {
     var imageSet = "";
     $.each(photos, function(index, value) {
       // display image
-      console.log(`<img class="image" src="${value.image_url}">`);
+      console.log(`Image "${value.name}", rating: ${value.rating}`);
       $('.images').append(`<img class="image" src="${value.image_url}">`);
     });
   };
