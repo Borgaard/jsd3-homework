@@ -12,6 +12,7 @@ $(function() {
   // Event handler for successful login
   _500px.on('authorization_obtained', function() {
     $('.sign-in-view').hide();
+    $('.image-results-view > h3').before('<h3>Greatings, Melvin!</h3>');
     $('.image-results-view').show();
 
     if (navigator.geolocation) {
