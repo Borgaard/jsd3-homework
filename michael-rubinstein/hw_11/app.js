@@ -3,44 +3,52 @@ $(function() {
   _500px.init({
     sdk_key: 'c095a1ed8923d151066ec81a6569a9dd1195e5c5'
   });
+
+  // Event handler for clicking login button
   $('#login').click(function() {
     _500px.login();
   });
+
+  // Event handler for successful login
   _500px.on('authorization_obtained', function() {
     $('.sign-in-view').hide();
     $('.image-results-view').show();
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
-        var lat = position.coords.latitude;
-        var long = position.coords.longitude;
-        console.log(`lat: ${lat}`);
-        console.log(`long: ${long}`);
-        var radius = '10mi';
-        var searchOptions = {
-          geo: lat + ',' + long + ',' + radius,
-          only: 'Landscapes',
-          sort: 'rating',
-          rpp: 28
-        };
-
-        _500px.api('/photos/search', searchOptions, function(response) {
-          if (response.data.photos.length === 0) {
-            // no results
-            console.log("No photos found.");
-          } else {
-            console.log("I found photos!");
-            handleResponseSuccess(response.data.photos);
-          };
-        });
+        getPhotos(position);
       });
     } else {
       $('.images').append("Sorry, your pathetic browser doth not geolocate!");
     }
   });
 
-  function handleResponseSuccess(photos) {
-    // thing
+  // Create query for photos and send it to 500px
+  function getPhotos(position) {
+    var lat = position.coords.latitude;
+    var long = position.coords.longitude;
+    var radius = '10mi';
+    var searchOptions = {
+      geo: lat + ',' + long + ',' + radius,
+      only: 'Landscapes',
+      sort: 'rating',
+      rpp: 28
+    };
+
+    // Ask 500px for photos and check if we got any back
+    _500px.api('/photos/search', searchOptions, function(response) {
+      if (response.data.photos.length === 0) {
+        // no results
+        console.log("No photos found.");
+      } else {
+        console.log("I found photos!");
+        handePhotoArray(response.data.photos);
+      };
+    });
+  }
+
+  // Display the photos on the page
+  function handePhotoArray(photos) {
     var imageSet = "";
     $.each(photos, function(index, value) {
       // display image
