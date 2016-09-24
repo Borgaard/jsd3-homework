@@ -66,7 +66,28 @@ $('.image-results-view').show();
         if (response.data.photos.length === 0 ) {      // from documentation, see Response Object, also length === 0 says we want at least 1 photo 
           console.log ("No photos found");
         }  else {
-          console.log(response.data.photos); // <<< REPLACE THIS WITH FUNCTION FOR SUCCESS, WRITE FUNCTION BELOW 
+          // console.log(response.data.photos); // <<< REPLACE THIS WITH FUNCTION FOR SUCCESS, WRITE FUNCTION BELOW This displayed object from the API. 
+          for (var i = 0; i < response.data.photos.length; i++) {
+            //below console.log confirmed I got the right data results          
+             // console.log("\nDescription: " + response.data.photos[i].description + ", Image URL: " + response.data.photos[i].image_url);
+
+           $('#images').append('image_url')
+
+
+          }
+
+    // I think below is the procedure for vanilla JS 
+    var createH1 = document.createElement("h1");
+    var heading_text = document.createTextNode('A startup that is ' + startupX[random1] + ', but for ' + startupY[random2]);
+    createH1.appendChild(heading_text);
+    document.body.appendChild(createH1);
+
+
+
+
+
+
+
         }
       }) 
 
@@ -82,6 +103,16 @@ $('.image-results-view').show();
 - Add a class `image` to the image and append it to `.images` which already exists in the HTML.
 - Once again, use as much jQuery as possible.
 - Hint: Check out `jquery.each()`, which is similar to but different from the `.each()` method we used previously.
+*/
+
+
+// REFERENCE CODE FROM THE JSON PARSE HOMEWORK - MIGHT BE RELEVANT 
+/*
+for (var i = 0; i < newArr.items.length; i++) {
+// so newArr is an object, items is an array inside the object, and length applies to arrays (not objects)
+    // console.log(newArr.items[i]);
+    console.log("\nTitle: " + newArr.items[i].title + ", Date: " + newArr.items[i].date_taken);
+}
 */
 
 /*
