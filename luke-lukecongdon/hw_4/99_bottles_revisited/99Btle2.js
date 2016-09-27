@@ -24,7 +24,7 @@ for(var i = 99; i > 0; i--) {
 
 // var newUl = document.querySelector("#song_ul"); // could use simply ul, but is more specific
 // above is JS, not jQuery
-var $newUl = $("#song_ul");
+var $newUl = $("#song_ul"); 
 
 for(var i = 99; i >= 0; i--) {
     
@@ -46,7 +46,7 @@ for(var i = 99; i >= 0; i--) {
         
     }
 
-    $newUl.append($newLi);
+    $newUl.append($newLi);  
 }
 
 

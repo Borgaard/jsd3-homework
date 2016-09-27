@@ -71,22 +71,18 @@ $('.image-results-view').show();
             //below console.log confirmed I got the right data results          
              // console.log("\nDescription: " + response.data.photos[i].description + ", Image URL: " + response.data.photos[i].image_url);
 
-           $('#images').append('image_url')
+
+             var $image = $("<img>").attr( "src", response.data.photos[i].image_url).addClass("image");
+            // src is the attribute for img, e.g. img src=...
+            // response.data.... is the value string for src
+            // see http://api.jquery.com/attr/
+
+
+
+           $('.images').append($image) //.images is a class for the div
 
 
           }
-
-    // I think below is the procedure for vanilla JS 
-    var createH1 = document.createElement("h1");
-    var heading_text = document.createTextNode('A startup that is ' + startupX[random1] + ', but for ' + startupY[random2]);
-    createH1.appendChild(heading_text);
-    document.body.appendChild(createH1);
-
-
-
-
-
-
 
         }
       }) 
@@ -127,3 +123,16 @@ img.appendTo('#imagediv');
 
   });
 });
+
+
+
+
+
+/*
+//old note thoughts
+    // I think below is the procedure for vanilla JS 
+    var createH1 = document.createElement("h1");
+    var heading_text = document.createTextNode('A startup that is ' + startupX[random1] + ', but for ' + startupY[random2]);
+    createH1.appendChild(heading_text);
+    document.body.appendChild(createH1);
+*/
