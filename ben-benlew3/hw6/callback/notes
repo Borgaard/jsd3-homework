@@ -1,0 +1,17 @@
+Ways to store functions:
+    declare a function - you can declare a function anywhere and is hoisted to the top.
+    function expression
+    anonymous function - dont give the function any name, usually within another function
+    methods - function within an object. value of a key
+
+Functions and Callbacks
+  asynchronous programming - waits for an action
+    works with events and event handlers ex: el.onclick = ();
+    AJAX - a method to call an API from a server
+
+      var $yesButton = $('#yes-button');
+      $yesButton.on('click', function(e){
+      ...
+      });
+  First-class objects are data types.
+  Higher-order Function - takes a function and returns a function

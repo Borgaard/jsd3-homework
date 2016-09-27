@@ -1,0 +1,21 @@
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*#city, .weatherTemplateWrapper {
+  background: #bef;
+  padding: 0.5em;
+  font: 1em Arial, Helvetica, sans-serif;
+}*/
+
+#city div span:first-child,
+.weatherTemplateWrapper div span:first-child {
+  font-weight: bold;
+}
+
+.city{
+  background: #bef;
+  padding:0.5em;
+  font:1em arial, Helvetica, sans-serif;
+  margin-bottom: 1em;
+}

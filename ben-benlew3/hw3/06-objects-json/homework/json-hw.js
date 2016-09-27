@@ -17,11 +17,8 @@ with the date the photo was taken. The first console.log should return the follo
 "What a surprise in lyon. 2016-02-23T06:47:30-08:00"
 
 */
-
-for (var title in flickerObj.items){
-  if (flickerObj.items.hasOwnProperty(title)){
-    console.log(flickerObj.items[0].title + flickerObj.items[0].date_taken);
-  }
+for (i = 0; i < flickerObj.items.length; i++){
+    console.log(flickerObj.items[i].title + flickerObj.items[i].date_taken);
 }
 
 /*
