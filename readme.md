@@ -54,6 +54,6 @@ Weekly Homework
 | 8        | Use `500px` to find user location and display landscape photos nearby. | Advanced APIs | Wednesday, September 21st |
 | 9        | Feed news data with `feedr` | In-class lab, API project | Wednesday, October 5th |
 | 10       | `makePerson.js`. Bonus: `this` | Closures & this | Monday, October 3rd |
-| ...      | - | - | - |
+| Final Project | Send Sasha & Nicole project description & create Github repo by Wednesday, October 5th. | Firebase & CRUD | Monday, October 17th |
 
 
