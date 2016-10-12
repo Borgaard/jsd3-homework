@@ -3,7 +3,7 @@ Convert your app.js code from the 01-make-a-person folder
 to a JavaScript module
 */
 
-function makePerson(name, age) {
+var donald = (function makePerson(name, age) {
 
 	var kids = [];
 	console.log(`Poof! ${name} exists.`);
@@ -35,9 +35,9 @@ function makePerson(name, age) {
 			age += 1;
 		}
 	};
-}
+})("Donald Duck", 35);
 
-var donald = makePerson("Donald Duck", 35);
+// var donald = makePerson("Donald Duck", 35);
 donald.haveNewKid("Huey");
 
 console.log(`${donald.getMyName()} is ${donald.getMyAge()} years old.`);
