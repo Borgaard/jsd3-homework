@@ -1,4 +1,4 @@
-// Convert favorites list to jQuery:
+// Exercise: Convert the JavaScript at the botton to jQuery 
 
 
 function addToList($list, $newThing) {

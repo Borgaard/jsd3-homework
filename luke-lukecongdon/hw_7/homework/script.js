@@ -10,3 +10,14 @@
 
 "use strict";
 
+
+/*
+Use jQuery
+favorite things === accept a form-entered value
+onClick action
+retrieve API object (JSON string which I parse)
+display results (look at string, pick parts I want)
+tip: log to console as I go
+
+*/
+
